@@ -288,6 +288,8 @@ def decompress(pubkey):
 
 def privkey_to_pubkey(privkey):
     f = get_privkey_format(privkey)
+    # TODO: fix format judge
+    f = 'hex_compressed'
     privkey = decode_privkey(privkey, f)
     if privkey >= N:
         raise Exception("Invalid privkey")
